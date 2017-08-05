@@ -26,3 +26,4 @@ Route::get('product/{id}', function(){
 Route::get('admin/add-product', function(){
     return view('admin.add-product');
 });
+Route::post('save-product', 'VeritoController@saveProduct')->name('save-product');

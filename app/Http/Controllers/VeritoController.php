@@ -27,4 +27,8 @@ class VeritoController extends Controller
 
         return view('others.todos-los-productos');
     }
+
+    public function saveProduct(Request $request){
+        return response()->json($request);
+    }
 }

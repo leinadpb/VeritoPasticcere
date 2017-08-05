@@ -4,7 +4,7 @@
     <div class="page-header"><h3>Agregar producto</h3></div>
 
     <div class="container">
-        <form class='form-horizontal' action="" method="get">
+        <form class='form-horizontal' action="{{route('save-product')}}" method="post">
 
             <div class="form-group">
                 <label for="inputTitle" class="col-sm-2 control-label">Título</label>
@@ -52,6 +52,7 @@
                     <textarea name='description' class="form-control" rows="3" placeholder="Breve descripción del producto..."></textarea>
                 </div>
             </div>
+            {{csrf_field()}}
             <button type="submit" class="btn btn-primary" style="width:100%;">Agregar</button>
 
         </form>
