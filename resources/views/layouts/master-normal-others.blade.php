@@ -21,7 +21,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- End -->
-
+    <script src="{{URL::to('js/jquery.min.js')}}"></script>
     <!-- Bootstrap Beta Version -->
 
 
@@ -31,6 +31,9 @@
     <div class="container-fluid">
         @yield('content')
     </div>
+    <script type="text/javascript">
+        @yield('myCode')
+    </script>
 
 </body>
 </html>

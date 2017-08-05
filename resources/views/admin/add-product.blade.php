@@ -13,6 +13,18 @@
                 </div>
             </div>
             <div class="form-group">
+                <label>Subir imagen</label>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <span class="btn btn-default btn-file">
+                            Buscar... <input name='mainImage' type="file" id="imgInp" required>
+                        </span>
+                    </span>
+                    <input type="text" class="form-control" readonly>
+                </div>
+                <img id='img-upload'/>
+            </div>
+            <div class="form-group">
                 <label for="inputCategory" class="col-sm-2 control-label">Categoría</label>
                 <div class="col-sm-10">
                     <select class="form-control" name="category">
@@ -57,4 +69,43 @@
 
         </form>
     </div>
+@stop
+
+@section('myCode')
+    $(document).ready( function() {
+    $(document).on('change', '.btn-file :file', function() {
+    var input = $(this),
+    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.trigger('fileselect', [label]);
+    });
+
+    $('.btn-file :file').on('fileselect', function(event, label) {
+
+    var input = $(this).parents('.input-group').find(':text'),
+    log = label;
+
+    if( input.length ) {
+    input.val(log);
+    } else {
+    if( log ) alert(log);
+    }
+
+    });
+    function readURL(input) {
+    if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+    $('#img-upload').attr('src', e.target.result);
+    }
+
+ /*   reader.readAsDataURL(input.files[0]);*/
+    }
+    }
+
+    $("#imgInp").change(function(){
+    readURL(this);
+    });
+    });
+
 @endsection

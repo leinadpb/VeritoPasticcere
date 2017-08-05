@@ -23,6 +23,8 @@ class CreateProductsTable extends Migration
             $table->string('decoration');
             $table->string('category');
             $table->string('description');
+            $table->string('mainImage');
+
         });
     }
 
