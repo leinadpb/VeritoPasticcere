@@ -18,3 +18,11 @@ Route::get('clientes', 'VeritoController@clientes')->name('clients');
 Route::get('contacto', 'VeritoController@contacto')->name('contact');
 Route::get('sobre-nosotros', 'VeritoController@sobre_nosotros')->name('about-us');
 Route::get('todos-los-productos', 'VeritoController@todos_los_productos')->name('all-products');
+Route::get('product/{id}', function(){
+   return view('others.producto');
+})->name('single-product');
+
+//To Admin pages
+Route::get('admin/add-product', function(){
+    return view('admin.add-product');
+});
