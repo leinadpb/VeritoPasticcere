@@ -18,12 +18,13 @@ Route::get('clientes', 'VeritoController@clientes')->name('clients');
 Route::get('contacto', 'VeritoController@contacto')->name('contact');
 Route::get('sobre-nosotros', 'VeritoController@sobre_nosotros')->name('about-us');
 Route::get('todos-los-productos', 'VeritoController@todos_los_productos')->name('all-products');
-Route::get('product/{id}', function(){
-   return view('others.producto');
-})->name('single-product');
+Route::get('product/{id}', 'VeritoController@singleProduct')->name('single-product');
 
 //To Admin pages
 Route::get('admin/add-product', function(){
     return view('admin.add-product');
 });
 Route::post('save-product', 'VeritoController@saveProduct')->name('save-product');
+
+//Search engine
+Route::post('/search', 'VeritoController@search')->name('search');
