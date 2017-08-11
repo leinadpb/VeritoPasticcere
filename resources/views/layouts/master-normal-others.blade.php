@@ -10,6 +10,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Glegoo|Satisfy" rel="stylesheet">   <!-- single product title and description -->
 
     <!-- Styles -->
     <link type="text/css" rel="stylesheet" href="{{URL::to('css/normal-style.css')}}">

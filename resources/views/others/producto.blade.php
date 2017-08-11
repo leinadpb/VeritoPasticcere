@@ -2,22 +2,36 @@
 
 @section('content')
 
-    <div class="row">
+    <!-- Receiving vars:
+           $product,
+     -->
 
-        <div class="col-md-5">
-            <a href="#" class="thumbnail">
-                <img class="img-responsive" src="{{ $product->mainImage }}" alt="{{ $product->title }}">
-            </a>
+    <div class="container-fluid">
+
+        <!-- Menu -->
+        <div class="Menu">
+
         </div>
 
-        <div class="col-md-7">
-            <div class="des-title"><h3>Descripción</h3></div>
-            <hr>
-            <div class="description">
-                <div class=''>
-                    {{ $product->description }}
-                </div>
+        <!-- Other Sections -->
+        <div class="row">
+
+            <div class="col-md-2"></div>
+
+            <!-- Slider or single image-->
+            <div class="col-md-4">
+                @include('others.slider')
             </div>
+
+            <!-- Product Details -->
+            <div class="col-md-4">
+                @include('others.details')
+            </div>
+
+            <div class="col-md-2"></div>
+
         </div>
+    </div>
+
 
 @endsection

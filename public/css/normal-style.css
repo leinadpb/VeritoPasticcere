@@ -134,3 +134,15 @@ body {
 .myButton{
     height: 100%;
 }
+
+/*Single product*/
+.single-product-title{
+    font-family: 'Satisfy', cursive;
+
+}
+.single-product-des{
+    font-family: 'Glegoo', serif;
+}
+.single-product-des > p{
+    font-size: 1.2em;
+}
