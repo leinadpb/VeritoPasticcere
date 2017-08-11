@@ -15,16 +15,26 @@
     <!-- Styles -->
     <link type="text/css" rel="stylesheet" href="{{URL::to('css/normal-style.css')}}">
 
-<!-- Bootstrap -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- JavaScript and Jquery -->
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{URL::to('css/font-awesome.min.css')}}">
+
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{{URL::to('css/bootstrap.css')}}" type="text/css">
+    <!-- JavaScript and Jquery -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="{{URL::to('js/bootstrap.js')}}"></script>
+
     <!-- End -->
+
+    <!-- Chocolat, for showing images -->
+    <script type="text/javascript" src="{{URL::to('js/jquery.js')}}"></script>
+    <script type="text/javascript" src="{{URL::to('js/jquery.chocolat.js')}}"></script>
+    <link rel="stylesheet" href="{{URL::to('css/chocolat.css')}}" type="text/css" media="screen" charset="utf-8">
 
 
 </head>
@@ -37,5 +47,8 @@
         @yield('myCode')
     </script>
     @include('partials.footer')
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-598e285f176f6444"></script>
 </body>
 </html>

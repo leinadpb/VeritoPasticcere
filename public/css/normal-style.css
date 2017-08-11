@@ -56,12 +56,7 @@ body {
 }
 
 /* Nav Bar */
-.navbar-brand {
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-    width: 200px; /* No height needed ... image will resize automagically */
-}
+
 
 /* all product */
 .product-image{
@@ -145,4 +140,14 @@ body {
 }
 .single-product-des > p{
     font-size: 1.2em;
+}
+.send{
+    width:100%;
+}
+.social{
+    width:100%;
+}
+.back > span{
+    font-size: 2em;
+    margin-top: 0.2em;
 }

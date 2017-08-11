@@ -34,4 +34,9 @@
     </div>
 
 
-@endsection
+@stop
+@section('myCode')
+    $(document).ready(function(){
+        $('#example1').Chocolat();
+    });
+@stop
