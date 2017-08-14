@@ -28,3 +28,8 @@ Route::post('save-product', 'VeritoController@saveProduct')->name('save-product'
 
 //Search engine
 Route::post('/search', 'VeritoController@search')->name('search');
+
+//Testing
+Route::get('/cover', function(){
+    return view('others.cover');
+})->name('cover');

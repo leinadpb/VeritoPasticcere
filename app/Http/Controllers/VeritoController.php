@@ -10,7 +10,7 @@ class VeritoController extends Controller
     //
     public function index(){
 
-        return view('others.index');
+        return view('others.cover');
     }
     public function clientes(){
 

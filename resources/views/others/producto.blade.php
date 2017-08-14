@@ -8,27 +8,22 @@
 
     <div class="container-fluid">
 
-        <!-- Menu -->
-        <div class="Menu">
-
-        </div>
-
         <!-- Other Sections -->
         <div class="row">
 
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
 
             <!-- Slider or single image-->
-            <div class="col-md-4">
+            <div class="col-md-5">
                 @include('others.slider')
             </div>
 
             <!-- Product Details -->
-            <div class="col-md-4">
+            <div class="col-md-5">
                 @include('others.details')
             </div>
 
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
 
         </div>
     </div>

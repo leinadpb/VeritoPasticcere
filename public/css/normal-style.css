@@ -56,7 +56,9 @@ body {
 }
 
 /* Nav Bar */
-
+navbar.bg-primary{
+    background-color: #1d2124;
+}
 
 /* all product */
 .product-image{
@@ -150,4 +152,31 @@ body {
 .back > span{
     font-size: 2em;
     margin-top: 0.2em;
+}
+.myCard{
+    margin-bottom:0.6em;
+}
+.box-product{
+    text-decoration: none;
+    color:black;
+}
+.box-product:hover{
+    text-decoration: none;
+    color:#A67805;
+}
+
+
+/*Contact page*/
+.parallax {
+    /* The image used */
+    background-image: url("../images/contact2.jpg");
+
+    /* Set a specific height */
+    height: 200px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

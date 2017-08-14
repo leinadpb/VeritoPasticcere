@@ -15,11 +15,11 @@
                 <div class="col-md-11">
                     <form action="{{route('search')}}" method="post">
                         <div class="input-group">
-                            <input name="search-text" type="text" class="form-control" placeholder="Buscar...">
+                            <input name="search-text" type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
                             <span class="input-group-btn">
-                         <button class="btn btn-default" type="submit">Buscar</button>
-                    </span>
-                        </div><!-- /input-group -->
+                                <button class="btn btn-secondary" type="submit">Go!</button>
+                            </span>
+                       </div>
                         {{csrf_field()}}
                     </form>
                 </div>
@@ -27,11 +27,10 @@
             @else
             <form action="{{route('search')}}" method="post">
                 <div class="input-group">
-                    <input name="search-text" type="text" class="form-control" placeholder="Buscar...">
+                    <input name="search-text" type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
                     <span class="input-group-btn">
-                         <button class="btn btn-default" type="submit">Buscar</button>
-                    </span>
-                </div><!-- /input-group -->
+                        <button class="btn btn-secondary" type="submit">Go!</button></span>
+                </div>
                 {{csrf_field()}}
             </form>
             @endif
@@ -55,15 +54,17 @@
             </div>
             <br>
         @endif
+
+
     <div class="row">
         <!-- Start -->
         @foreach($products as $p)
-        <div class="col-sm-4 col-md-2">
-            <a class='box-product' href="{{route('single-product', ['id' => $p->id])}}">
-                <div class="thumbnail">
-                    <img class='product-image' src="{{URL::to('images/logo.jpg')}}" alt="Verito">
-                    <div class="caption">
-                        <h3>{{$p->title}}</h3>
+        <div class="myCard col-sm-4 col-md-2">
+            <a class='box-product card-img-top' href="{{route('single-product', ['id' => $p->id])}}">
+                <div class="card">
+                    <img class='product-image' src="{{URL::to('images/logo.jpg')}}" alt="{{$p->title}}">
+                    <div class="card-body">
+                        <h4 class="card-title">{{$p->title}}</h4>
                     </div>
                 </div>
             </a>
