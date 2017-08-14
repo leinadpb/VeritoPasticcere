@@ -158,11 +158,11 @@ navbar.bg-primary{
 }
 .box-product{
     text-decoration: none;
-    color:black;
+    color:#424242;
 }
 .box-product:hover{
     text-decoration: none;
-    color:#A67805;
+    color:black;
 }
 
 
@@ -179,4 +179,16 @@ navbar.bg-primary{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/*Footer*/
+.footer{
+    background-color: #1d2124;
+    color:white;
+}
+.footer ul li > a{
+    color:#ff8c00;
+}
+.footer ul li > a:hover{
+    color:#d2691e;
 }

@@ -24,7 +24,11 @@ Route::get('product/{id}', 'VeritoController@singleProduct')->name('single-produ
 Route::get('admin/add-product', function(){
     return view('admin.add-product');
 });
+Route::get('admin/add-client', function(){
+    return view('admin.add-client');
+});
 Route::post('save-product', 'VeritoController@saveProduct')->name('save-product');
+Route::post('save-client', 'VeritoController@saveClient')->name('save-client');
 
 //Search engine
 Route::post('/search', 'VeritoController@search')->name('search');

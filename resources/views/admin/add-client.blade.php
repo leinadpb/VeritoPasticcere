@@ -4,64 +4,29 @@
     <div class="page-header"><h3>Agregar cliente</h3></div>
 
     <div class="container">
-        <form class='form-horizontal' action="{{route('save-product')}}" method="post">
+        <form class='form-horizontal' action="{{route('save-client')}}" method="post">
 
             <div class="form-group">
-                <label for="inputTitle" class="col-sm-2 control-label">Nombre</label>
+                <label for="inputName" class="col-sm-2 control-label">Nombre</label>
                 <div class="col-sm-10">
-                    <input name='title' type="text" class="form-control" id="inputTitle" placeholder="Título representativo...">
+                    <input name='name' type="text" class="form-control" id="inputName" placeholder="Nombre a mostrar..." required>
                 </div>
             </div>
             <div class="form-group">
-                <label>Subir imagen</label>
+                <label>Foto del cliente</label>
                 <div class="input-group">
                     <span class="input-group-btn">
                         <span class="btn btn-default btn-file">
-                            Buscar... <input name='mainImage' type="file" id="imgInp" required>
+                            Buscar... <input name='photo' type="file" id="imgInp" required>
                         </span>
                     </span>
                     <input type="text" class="form-control" readonly>
                 </div>
-                <img id='img-upload'/>
             </div>
             <div class="form-group">
-                <label for="inputCategory" class="col-sm-2 control-label">Categoría</label>
+                <label for="inputDes" class="col-sm-2 control-label">Testimonio del cliente</label>
                 <div class="col-sm-10">
-                    <select class="form-control" name="category">
-                        <option>Bizcocho</option>
-                        <option>Dulce de mesa</option>
-                        <option>Otra</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputDeco" class="col-sm-2 control-label">Decoración</label>
-                <div class="col-sm-10">
-                    <input name='decoration' type="text" class="form-control" id="inputDeco" placeholder="Decoración...">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputColors" class="col-sm-2 control-label">Color(es)</label>
-                <div class="col-sm-10">
-                    <input name='colors' type="text" class="form-control" id="inputColors" placeholder="Separados por una coma (,)">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputPounds" class="col-sm-2 control-label">Libras</label>
-                <div class="col-sm-10">
-                    <input name='pounds' type="text" class="form-control" id="inputPounds" placeholder="Libras">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputFill" class="col-sm-2 control-label">Relleno</label>
-                <div class="col-sm-10">
-                    <input name='fill' type="text" class="form-control" id="inputFill" placeholder="Relleno...">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputDes" class="col-sm-2 control-label">Descripción</label>
-                <div class="col-sm-10">
-                    <textarea name='description' class="form-control" rows="3" placeholder="Breve descripción del producto..."></textarea>
+                    <textarea name='comment' class="form-control" rows="3" placeholder="Testimonio del cliente..." required></textarea>
                 </div>
             </div>
             {{csrf_field()}}

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
 use App\Products;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class VeritoController extends Controller
     }
     public function clientes(){
 
-        return view('others.clientes');
+        $c = Client::all();
+
+        return view('others.clientes', ['clients' => $c]);
     }
     public function contacto(){
 
@@ -64,6 +67,19 @@ class VeritoController extends Controller
 
     }
 
+    public function saveClient(Request $r){
+        $name = $r->input('name');
+        $photo = $r->input('photo');
+        $comment = $r->input('comment');
+        $client = new Client([
+            'name' => $name,
+            'photo' => $photo,
+            'comment' => $comment
+        ]);
+        $client->save();
+
+        return redirect()->route('clients');
+    }
     public function search(Request $request){
 
         $search = explode(" ", strtolower($request->input('search-text')));

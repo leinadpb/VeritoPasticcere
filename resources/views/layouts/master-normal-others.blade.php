@@ -4,11 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-
+    <meta name="description" content="Pasteles, postres, dulces de mesas y más.">
+    <meta name="author" content="SIECpb">
+    <link rel="icon" href="{{URL::to('images/favicon.ico')}}">
 
     <title>Verito Pasticcere</title>
 
@@ -21,10 +19,8 @@
     <link type="text/css" rel="stylesheet" href="{{URL::to('css/normal-style.css')}}">
     @yield('add-css')
 
-
-
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{URL::to('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{URL::to('css/font-awesome.css')}}">
 
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

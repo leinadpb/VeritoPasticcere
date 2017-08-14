@@ -10,7 +10,7 @@
             @if(!($msg) == "")
             <div class="row">
                 <div class="col-md-1">
-                    <a href="{{route('all-products')}}"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
+                    <a href="{{route('all-products')}}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-md-11">
                     <form action="{{route('search')}}" method="post">
