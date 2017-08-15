@@ -1,0 +1,1 @@
+<div class="container" align="center"><img class="img-responsive img-fluid" src="{{URL::to('images/404.jpg')}}" style="width:100em;height:auto;"></div>

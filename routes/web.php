@@ -27,6 +27,7 @@ Route::get('admin/add-product', function(){
 Route::get('admin/add-client', function(){
     return view('admin.add-client');
 })->middleware('auth');
+
 Route::post('save-product', 'VeritoController@saveProduct')->name('save-product');
 Route::post('save-client', 'VeritoController@saveClient')->name('save-client');
 
@@ -38,4 +39,5 @@ Route::get('/cover', function(){
     return view('others.cover');
 })->name('cover');
 Auth::routes();
+
 
