@@ -23,10 +23,10 @@ Route::get('product/{id}', 'VeritoController@singleProduct')->name('single-produ
 //To Admin pages
 Route::get('admin/add-product', function(){
     return view('admin.add-product');
-});
+})->name('add-product')->middleware('auth');
 Route::get('admin/add-client', function(){
     return view('admin.add-client');
-});
+})->middleware('auth');
 Route::post('save-product', 'VeritoController@saveProduct')->name('save-product');
 Route::post('save-client', 'VeritoController@saveClient')->name('save-client');
 
@@ -37,3 +37,5 @@ Route::post('/search', 'VeritoController@search')->name('search');
 Route::get('/cover', function(){
     return view('others.cover');
 })->name('cover');
+Auth::routes();
+

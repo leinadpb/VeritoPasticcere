@@ -18,6 +18,27 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('contact')}}">Contacto</a>
             </li>
+            @if (Auth::guest())
+
+            @else
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{Auth::user()->name}}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{route('register')}}">Agregar administrador</a>
+                            <a class="dropdown-item" href="{{route('add-product')}}">Agregar producto</a>
+                            <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit();">Cerrar sesión</a>
+                        </div>
+                    </div>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+
+
+            @endif
         </ul>
     </div>
 </nav><br>
