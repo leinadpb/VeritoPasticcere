@@ -59,10 +59,10 @@
     <div class="row">
         <!-- Start -->
         @foreach($products as $p)
-        <div class="myCard col-sm-4 col-md-2">
+        <div class="myCard col-sm-4 col-md-3">
             <a class='box-product card-img-top' href="{{route('single-product', ['id' => $p->id])}}">
                 <div class="card">
-                    <img class='product-image' src="{{URL::to('images/logo.jpg')}}" alt="{{$p->title}}">
+                    <img class='product-image' src="{{$p->mainImage}}" alt="{{$p->title}}">
                     <div class="card-body">
                         <h4 class="card-title">{{$p->title}}</h4>
                     </div>

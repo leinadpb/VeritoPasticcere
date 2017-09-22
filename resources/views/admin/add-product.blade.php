@@ -4,7 +4,7 @@
     <div class="page-header"><h3>Agregar producto</h3></div>
 
     <div class="container">
-        <form class='form-horizontal' action="{{route('save-product')}}" method="post">
+        <form class='form-horizontal' action="{{route('save-product')}}" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label for="inputTitle" class="col-sm-2 control-label">Título</label>

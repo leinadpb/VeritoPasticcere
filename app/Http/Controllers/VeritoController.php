@@ -5,6 +5,15 @@ namespace App\Http\Controllers;
 use App\Client;
 use App\Products;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Validator;
+use Aws\S3\S3Client;
+use League\Flysystem\AwsS3v3;
+use Aws;
+use League\Flysystem\AwsS3v3\AwsS3Adapter;
+
+
 
 class VeritoController extends Controller
 {
@@ -39,8 +48,22 @@ class VeritoController extends Controller
         return view('others.todos-los-productos')->with(['products' => $products, 'msg' => $msg]);
     }
 
+    public function store(Request $request)
+    {
+        $file = $request->file('mainImage');
+        if(!$file->isValid()) {
+            throw new \Exception($file->getErrorMessage());
+        }
+        $path = $file->store('ProductsMain','s3', 'public');
+        return $path;
+    }
+    public function getImage($path){
+        return Storage::disk('s3')->url($path);
+    }
+
     public function saveProduct(Request $request){
         //return response()->json($request);
+        //dd($request->file('mainImage'));
         $title = $request->input('title');
         $category = $request->input('category');
         $decoration = $request->input('decoration');
@@ -48,7 +71,11 @@ class VeritoController extends Controller
         $pounds = $request->input('pounds');
         $fill = $request->input('fill');
         $description = $request->input('description');
-        $mainImage = $request->input('mainImage');
+
+        $mainImage = $request->file('mainImage');
+
+        $path = $this->store($request);
+
 
         $product = new Products([
             'title' => $title,
@@ -58,7 +85,7 @@ class VeritoController extends Controller
             'pounds' => $pounds,
             'fill' => $fill,
             'description' => $description,
-            'mainImage' => $mainImage
+            'mainImage' => $this->getImage($path)
         ]);
 
         $product->save();
