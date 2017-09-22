@@ -15,7 +15,7 @@
         @endif
         <div class="content">
             <div class="title m-b-md">
-                <span style="font-family: 'Dancing Script', cursive;"><b>Verito Pasticcere</b></span>
+                <span style="font-family: 'Dancing Script', cursive;"><b>Verito Pasticcere!!!!!</b></span>
             </div>
 
             <div class="links">
