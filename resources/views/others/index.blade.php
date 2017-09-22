@@ -1,6 +1,6 @@
 @extends('layouts.master-normal')
 
-@section('content')
+@section('content45')
 <div class="myBody">
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
