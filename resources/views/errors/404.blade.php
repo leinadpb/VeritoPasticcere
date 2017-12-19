@@ -8,7 +8,7 @@
             <div class="display-3">Página no encontrada</div><hr>
             <div><h5>
                 Lo sentimos pero la página que estás buscando no existe en nuestro sitio web.<br><br>
-                    <b>ATT: Verito Pasticcere.</b> <i>Todos los derechos reservados.</i></h5>
+                    <b>Verito Pasticcere.</b> <i>Todos los derechos reservados.</i></h5>
             </div><br>
             <div>
                 <a href="{{route('home')}}">www.verito.com</a>
