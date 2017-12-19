@@ -54,7 +54,7 @@ class VeritoController extends Controller
         if(!$file->isValid()) {
             throw new \Exception($file->getErrorMessage());
         }
-        $path = $file->store('ProductsMain','s3', 'public');
+        $path = $file->store('veritophotoswebsite/ProductsMain','s3', 'public');
         return $path;
     }
     public function getImage($path){
