@@ -15,6 +15,18 @@
 
             <!-- Slider or single image-->
             <div class="col-md-5">
+                @if(Auth::check())
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <a class="btn btn-secondary btn-block" href="{{ route('modify-product', ['id' => $product->id]) }}">Modificar</a>
+                            </div>
+                            <div class="col-md-6">
+                                <a class="btn btn-secondary btn-block" href="{{ route('delete-product', ['id' => $product->id]) }}">Eliminar</a>
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 @include('others.slider')
             </div>
 

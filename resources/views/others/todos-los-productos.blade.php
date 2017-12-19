@@ -7,6 +7,12 @@
     <div class="row justify-content-md-center">
         <div class="col-md-4"></div>
         <div class="col-md-4">
+            @if(session()->has('product_deleted'))
+                <div class="alert alert-info">{{ session('product_deleted') }}</div>
+            @endif
+            @if(session()->has('modified_product'))
+                <div class="alert alert-info">{{ session('modified_product') }}</div>
+            @endif
             @if(!($msg) == "")
             <div class="row">
                 <div class="col-md-1">

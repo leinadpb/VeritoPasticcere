@@ -27,7 +27,13 @@ Route::get('admin/add-product', function(){
 
 Route::get('admin/add-client', function(){
     return view('admin.add-client');
-})->middleware('auth');
+})->name('add-client')->middleware('auth');
+
+Route::get('clientes/{id}/delete', 'VeritoController@deleteClient')->name('delete-client')->middleware('auth');
+
+Route::get('product/{id}/delete','VeritoController@deleteProduct')->name('delete-product');
+Route::get('product/{id}/modify','VeritoController@modifyProduct')->name('modify-product');
+Route::post('product/{id}/modify-product', 'VeritoController@modifyProductAction')->name('modify-product-action');
 
 Route::post('save-product', 'VeritoController@saveProduct')->name('save-product');
 Route::post('save-client', 'VeritoController@saveClient')->name('save-client');

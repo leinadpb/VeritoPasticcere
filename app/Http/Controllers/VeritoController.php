@@ -49,10 +49,11 @@ class VeritoController extends Controller
         return view('others.todos-los-productos')->with(['products' => $products, 'msg' => $msg]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $property)
     {
 
-        $file = $request->file('mainImage');
+        $file = $request->file($property);
+        dd($file);
         if(!$file->isValid()) {
            throw new \Exception($file->getErrorMessage());
             //return redirect()->route('add-product')->with('file_too_big' => 'La foto es muy grande.');
@@ -77,7 +78,7 @@ class VeritoController extends Controller
 
         $mainImage = $request->file('mainImage');
 
-        $path = $this->store($request);
+        $path = $this->store($request, 'mainImage');
 
 
         $product = new Products([
@@ -99,11 +100,14 @@ class VeritoController extends Controller
 
     public function saveClient(Request $r){
         $name = $r->input('name');
-        $photo = $r->input('photo');
+        $photo = $r->file('photo');
         $comment = $r->input('comment');
+
+        $path = $this->store($r, 'photo');
+
         $client = new Client([
             'name' => $name,
-            'photo' => $photo,
+            'photo' => $this->getImage($path),
             'comment' => $comment
         ]);
         $client->save();
@@ -155,5 +159,43 @@ class VeritoController extends Controller
         return redirect()->route('contact')->with('success_msg2', '¡El mensaje ha sido enviado satisfactoriamente!');
        // return redirect()->route('contact', ['success_msg' => '¡El mensaje ha sido enviado satisfactoriamente!']);
 
+    }
+
+
+
+    public function deleteProduct($id){
+
+        $product = Products::find($id);
+        $product->delete();
+
+        return redirect()->route('all-products')->with('product_deleted', 'El producto ha sido eliminado satisfactoriamente.');
+    }
+
+    public function modifyProduct($id){
+        $product = Products::find($id);
+        return view('admin.modify-product', ['product' => $product]);
+    }
+
+    public function modifyProductAction(Request $r, $id){ //mainImage will not be change in these release.
+        $product = Products::find($id);
+        $product->title = $r->input('title');
+        $product->pounds = $r->input('pounds');
+        $product->colors = $r->input('colors');
+        $product->fill = $r->input('fill');
+        $product->decoration = $r->input('decoration');
+        $product->category = $r->input('category');
+        //$product->mainImage = $r->input('mainImage');
+
+        $product->save();
+
+        return redirect()->route('all-products')->with('modified_product', 'El producto ha sido modificado.');
+
+    }
+
+    public function deleteClient($id){
+        $client = Client::find($id);
+        $client->delete();
+
+        return redirect()->route('clients')->with('deleted_client', 'El cliente satisfecho ha sido eliminado.');
     }
 }

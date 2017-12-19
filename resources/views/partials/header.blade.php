@@ -29,6 +29,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="/register">Agregar administrador</a>
                             <a class="dropdown-item" href="{{route('add-product')}}">Agregar producto</a>
+                            <a class="dropdown-item" href="{{route('add-client')}}">Agregar cliente satisfecho</a>
                             <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit();">Cerrar sesión</a>
                         </div>
                     </div>
