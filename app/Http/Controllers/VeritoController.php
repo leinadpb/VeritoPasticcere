@@ -51,9 +51,11 @@ class VeritoController extends Controller
 
     public function store(Request $request)
     {
+
         $file = $request->file('mainImage');
         if(!$file->isValid()) {
-            throw new \Exception($file->getErrorMessage());
+           throw new \Exception($file->getErrorMessage());
+            //return redirect()->route('add-product')->with('file_too_big' => 'La foto es muy grande.');
         }
         $path = $file->store('ProductsMain','s3', 'public');
         return $path;

@@ -1,6 +1,8 @@
 @extends('layouts.master-normal-others')
 @section('content')
-
+@if(session()->has('file_too_big'))
+<div class="alert alert-danger">{{ session('file_too_big') }}</div>
+@endif
     <div class="page-header"><h3>Agregar producto</h3></div>
 
     <div class="container">
