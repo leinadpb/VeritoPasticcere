@@ -13,7 +13,7 @@
                 <a class="nav-link" href="{{route('clients')}}">Clientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="{{route('about-us')}}">Sobre nosotros</a>
+                <a class="nav-link" href="{{route('about-us')}}">Sobre nosotros</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('contact')}}">Contacto</a>
