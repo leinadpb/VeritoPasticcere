@@ -53,7 +53,6 @@ class VeritoController extends Controller
     {
 
         $file = $request->file($property);
-        dd($file);
         if(!$file->isValid()) {
            throw new \Exception($file->getErrorMessage());
             //return redirect()->route('add-product')->with('file_too_big' => 'La foto es muy grande.');

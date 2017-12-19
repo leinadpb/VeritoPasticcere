@@ -12,7 +12,7 @@
     <div class="page-header"><h3>Agregar cliente</h3></div>
 
     <div class="container">
-        <form class='form-horizontal' action="{{route('save-client')}}" method="post">
+        <form class='form-horizontal' action="{{route('save-client')}}" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label for="inputName" class="col-sm-2 control-label">Nombre</label>

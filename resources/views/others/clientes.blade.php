@@ -13,7 +13,7 @@ Getting Clients as $c
         @foreach($clients as $c)
         <!-- Start -->
         <div class="col-md-4" align="center">
-            <img class="rounded-circle" src="{{URL::to('images/leinad.jpg')}}" alt="verito pasticcere | {{$c->name}}" width="140" height="140">
+            <img class="rounded-circle" src="{{ $c->photo }}" alt="verito pasticcere | {{$c->name}}" width="140" height="140">
             <h2>{{$c->name}}</h2>
             <p>{{$c->comment}}</p>
             @if(Auth::check())

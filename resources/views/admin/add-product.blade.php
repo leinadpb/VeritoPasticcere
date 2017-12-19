@@ -39,31 +39,31 @@
             <div class="form-group">
                 <label for="inputDeco" class="col-sm-2 control-label">Decoración</label>
                 <div class="col-sm-10">
-                    <input name='decoration' type="text" class="form-control" id="inputDeco" placeholder="Decoración...">
+                    <input name='decoration' type="text" class="form-control" id="inputDeco" placeholder="Decoración..." required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputColors" class="col-sm-2 control-label">Color(es)</label>
                 <div class="col-sm-10">
-                    <input name='colors' type="text" class="form-control" id="inputColors" placeholder="Separados por una coma (,)">
+                    <input name='colors' type="text" class="form-control" id="inputColors" placeholder="Separados por una coma (,)" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPounds" class="col-sm-2 control-label">Libras</label>
                 <div class="col-sm-10">
-                    <input name='pounds' type="text" class="form-control" id="inputPounds" placeholder="Libras">
+                    <input name='pounds' type="text" class="form-control" id="inputPounds" placeholder="Libras" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputFill" class="col-sm-2 control-label">Relleno</label>
                 <div class="col-sm-10">
-                    <input name='fill' type="text" class="form-control" id="inputFill" placeholder="Relleno...">
+                    <input name='fill' type="text" class="form-control" id="inputFill" placeholder="Relleno..." required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputDes" class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-10">
-                    <textarea name='description' class="form-control" rows="3" placeholder="Breve descripción del producto..."></textarea>
+                    <textarea name='description' class="form-control" rows="3" placeholder="Breve descripción del producto..." requried></textarea>
                 </div>
             </div>
             {{csrf_field()}}
