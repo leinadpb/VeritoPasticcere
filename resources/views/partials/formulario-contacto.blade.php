@@ -1,4 +1,4 @@
-<form>
+<form action="{{route('send-mail')}}" method="post">
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="inputName4" class="col-form-label">Nombre</label>
@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
         <label for="inputSubject" class="col-form-label">Asunto</label>
-        <input aria-describedby="subject-block" type="text" class="form-control" id="inputSubject" placeholder="Asunto del mensaje..." required>
+        <input aria-describedby="subject-block" name="subject" type="text" class="form-control" id="inputSubject" placeholder="Asunto del mensaje..." required>
         <!--<small id="subject-block" class="form-text text-muted">
             Ej: Precio de un bizcocho de chocolate
         </small>-->

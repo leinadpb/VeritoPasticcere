@@ -27,7 +27,7 @@
                             {{Auth::user()->name}}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="{{route('register')}}">Agregar administrador</a>
+                            <a class="dropdown-item" href="/register">Agregar administrador</a>
                             <a class="dropdown-item" href="{{route('add-product')}}">Agregar producto</a>
                             <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit();">Cerrar sesión</a>
                         </div>
