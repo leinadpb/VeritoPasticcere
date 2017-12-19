@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use App\Products;
+use App\Mail\ContactEmail;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
@@ -50,9 +51,11 @@ class VeritoController extends Controller
 
     public function store(Request $request)
     {
+
         $file = $request->file('mainImage');
         if(!$file->isValid()) {
-            throw new \Exception($file->getErrorMessage());
+           throw new \Exception($file->getErrorMessage());
+            //return redirect()->route('add-product')->with('file_too_big' => 'La foto es muy grande.');
         }
         $path = $file->store('veritophotoswebsite/ProductsMain','s3', 'public');
         return $path;
@@ -129,6 +132,28 @@ class VeritoController extends Controller
         }
 
         return view('others.todos-los-productos', ['products' => $query, 'msg' => $msg]);
+
+    }
+
+    public function sendMail(Request $r){
+
+        $data = [
+            'message' => $r->input('msg'),
+            'from_email' => $r->input('email'),
+            'subject_email' => $r->input('subject'),
+            'name_from_email' => $r->input('first-name'),
+            'lastname_from_email' => $r->input('last-name')
+
+        ];
+
+        \Mail::to('digrape07@gmail.com')->send(new ContactEmail($data));
+
+        //dd($data);
+
+        //return view('others.contacto', ['success_msg' => "¡El mensaje ha sido enviado satisfactoriamente!"]);
+
+        return redirect()->route('contact')->with('success_msg2', '¡El mensaje ha sido enviado satisfactoriamente!');
+       // return redirect()->route('contact', ['success_msg' => '¡El mensaje ha sido enviado satisfactoriamente!']);
 
     }
 }
